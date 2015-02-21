@@ -60,6 +60,42 @@ describe('Main View', function() {
         expect(browser.getCurrentUrl()).toContain('welcome')
       })
     });
+
+    it('should login the user "manager" with password "password" ', function() {
+      page.loginForm.username.sendKeys("manager");
+      page.loginForm.password.sendKeys("password");
+
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
+    it('should login the user "admin" with password "password" ', function() {
+      page.loginForm.username.sendKeys("admin");
+      page.loginForm.password.sendKeys("password");
+
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
+    it('should login the user "developer" with password "password" ', function() {
+      page.loginForm.username.sendKeys("developer");
+      page.loginForm.password.sendKeys("password");
+
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
+    it('should login the user "tester" with password "password" ', function() {
+      page.loginForm.username.sendKeys("tester");
+      page.loginForm.password.sendKeys("password");
+
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
   })
 
 });

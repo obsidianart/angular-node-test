@@ -91,6 +91,11 @@ describe('Main View', function() {
         })
       })
     });
+
+    it('should redirect a non logged user to the homepage when trying to access the welcome page ', function() {
+      browser.get('/welcome');
+      expect(browser.getCurrentUrl()).not.toContain('welcome')
+    });
   })
 
 });

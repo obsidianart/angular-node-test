@@ -6,6 +6,7 @@ angular.module('skyServerApp')
       .state('welcome', {
         url: '/welcome',
         templateUrl: 'app/welcome/welcome.html',
-        controller: 'WelcomeCtrl'
+        controller: 'WelcomeCtrl',
+        authenticate: true
       });
   });

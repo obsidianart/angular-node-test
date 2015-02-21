@@ -22,14 +22,15 @@
   * U4 - Allow users 'manager', 'admin', 'developer', 'tester' to be logged in
   * U5 - Make username case insensitive
   * U6 - Removed and done with U3
-  * U7 - Add a logout button (which logs the user out)
-  * U8 - Redirect to the home page when a user logout
+  * U7 - Add a logout button (which logs the user out) and Redirect to the home page
+  * U8 - Removed and done with U7
   * U9 - Record login attempt with the following characteristics
     * IP
     * Datetime (unix timestamp format)
     * Action (should be one of AUTH_SUCCESS or AUTH_FAILURE)
     * Username
   * U10 - Create a json feed with the login attempt restricted to the admin user
+  * U11 - Prevent non logged user to go to the welcome page
   
 Known bug:
   grunt build expect unit test in the client part and crash when trying to build.

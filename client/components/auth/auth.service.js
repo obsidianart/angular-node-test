@@ -32,11 +32,22 @@ angular.module('skyServerApp')
           return cb();
         }).
         error(function(err) {
+          this.logout();
           deferred.reject(err);
           return cb(err);
         }.bind(this));
 
         return deferred.promise;
+      },
+      
+      /**
+       * Delete access token and user info
+       *
+       * @param  {Function}
+       */
+      logout: function() {
+        $cookieStore.remove('token');
+        currentUser = {};
       },
 
       /**

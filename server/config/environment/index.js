@@ -21,8 +21,8 @@ var all = {
   // Server port
   port: process.env.PORT || 9000,
 
-  // Should we populate the DB with sample data?
-  seedDB: false,
+  // Should we populate the DB?
+  seedDB: true,
   
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {

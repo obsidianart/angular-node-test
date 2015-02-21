@@ -2,4 +2,11 @@
 
 // Development specific configuration
 // ==================================
-module.exports = {};
+module.exports = {
+  // MongoDB connection options
+  mongo: {
+    uri: 'mongodb://localhost/skyserver-dev'
+  },
+
+  seedDB: true
+};

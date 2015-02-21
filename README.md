@@ -13,7 +13,7 @@
      $grunt test:server
 
 ###NOTE
-  For testing and local execution fake data (seed.js) with the users has been created. To let those user log-in in a real system the database should be popolate correctly.
+  Users are created when the serve is started but not removed.
 
 ###User stories
   * U1 - Create a page that show the project name and the author

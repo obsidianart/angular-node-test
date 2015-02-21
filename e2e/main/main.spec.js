@@ -36,27 +36,43 @@ describe('Main View', function() {
     });
 
     it('should not login an unknown user', function() {
-      page.loginForm.username.sendKeys("random");
-
-      page.loginForm.button.click().then(function(){
+      page.doLogin('random','').then(function(){
         expect(browser.getCurrentUrl()).not.toContain('welcome')
       })
     });
 
     it('should not login an unknown user with an existing password', function() {
-      page.loginForm.username.sendKeys("random");
-      page.loginForm.password.sendKeys("password");
-
-      page.loginForm.button.click().then(function(){
+      page.doLogin('random','password').then(function(){
         expect(browser.getCurrentUrl()).not.toContain('welcome')
       })
     });
 
     it('should login the user "user" with password "password" ', function() {
-      page.loginForm.username.sendKeys("user");
-      page.loginForm.password.sendKeys("password");
+      page.doLogin('user','password').then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
 
-      page.loginForm.button.click().then(function(){
+    it('should login the user "manager" with password "password" ', function() {
+      page.doLogin('manager','password').then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
+    it('should login the user "admin" with password "password" ', function() {
+      page.doLogin('admin','password').then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
+    it('should login the user "developer" with password "password" ', function() {
+      page.doLogin('developer','password').then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
+    it('should login the user "tester" with password "password" ', function() {
+      page.doLogin('tester','password').then(function(){
         expect(browser.getCurrentUrl()).toContain('welcome')
       })
     });

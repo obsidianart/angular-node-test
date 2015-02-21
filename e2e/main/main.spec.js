@@ -53,6 +53,12 @@ describe('Main View', function() {
       })
     });
 
+    it('should be case insentive in the username', function() {
+      page.doLogin('uSeR','password').then(function(){
+        expect(browser.getCurrentUrl()).toContain('welcome')
+      })
+    });
+
     it('should login the user "manager" with password "password" ', function() {
       page.doLogin('manager','password').then(function(){
         expect(browser.getCurrentUrl()).toContain('welcome')

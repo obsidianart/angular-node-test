@@ -2,4 +2,9 @@
 
 // Test specific configuration
 // ===========================
-module.exports = {};
+module.exports = {
+  // MongoDB connection options
+  mongo: {
+    uri: 'mongodb://localhost/skyserver-test'
+  }
+};

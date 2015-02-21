@@ -43,8 +43,18 @@ describe('Main View', function() {
       })
     });
 
-    it('should login the user "user"', function() {
+    it('should not login an unknown user with an existing password', function() {
+      page.loginForm.username.sendKeys("random");
+      page.loginForm.password.sendKeys("password");
+
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).not.toContain('welcome')
+      })
+    });
+
+    it('should login the user "user" with password "password" ', function() {
       page.loginForm.username.sendKeys("user");
+      page.loginForm.password.sendKeys("password");
 
       page.loginForm.button.click().then(function(){
         expect(browser.getCurrentUrl()).toContain('welcome')

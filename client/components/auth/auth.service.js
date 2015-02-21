@@ -17,7 +17,6 @@ angular.module('skyServerApp')
        * @return {Promise}
        */
       login: function(user, callback) {
-        console.log("auth login function")
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 

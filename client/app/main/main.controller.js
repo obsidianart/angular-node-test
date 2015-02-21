@@ -13,8 +13,8 @@ angular.module('skyServerApp')
         .then( function() {
           // Logged in, redirect to welcome page
           $location.path('/welcome');
-        })
+        });
       }
-  	}
+  	};
 
   });

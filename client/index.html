@@ -18,8 +18,19 @@
     <!-- endbuild -->
   </head>
   <body ng-app="skyServerApp">
+    <header class="hero-unit" id="banner">
+      <div class="container">
+        <h1>Sky test</h1>
+      </div>
+    </header>
 
     <div ui-view=""></div>
+
+    <footer class="footer">
+      <div class="container">
+          <p>Stefano Solinas - ObsidianArt</p>
+      </div>
+    </footer>
 
     <!-- build:js({client,node_modules}) app/vendor.js -->
       <!-- bower:js -->
@@ -38,6 +49,8 @@
           <!-- injector:js -->
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/welcome/welcome.controller.js"></script>
+          <script src="app/welcome/welcome.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

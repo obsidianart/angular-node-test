@@ -6,11 +6,14 @@
     $mongod -dbpath data/db
     $grunt serve
 
+###To run unit tests
+     $grunt test
+
 ###To run e2e tests:
      $grunt test:e2e
 
-###To run unit tests (server only, frontend has only e2e tests):
-     $grunt test:server
+###To build the project
+    $grunt
 
 ###NOTE
   Users are created when the serve is started but not removed.
@@ -31,6 +34,3 @@
     * Username
   * U10 - Create a json feed with the login attempt restricted to the admin user
   * U11 - Prevent non logged user to go to the welcome page
-  
-Known bug:
-  grunt build expect unit test in the client part and crash when trying to build.

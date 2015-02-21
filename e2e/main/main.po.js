@@ -18,12 +18,17 @@ var MainPage = function() {
   	button: loginForm.element(by.css('.btn-login'))
   }
 
-
   this.doLogin = function(username, password) {
     this.loginForm.username.sendKeys(username);
     this.loginForm.password.sendKeys(password);
 
     return this.loginForm.button.click();
+  }
+
+  this.logoutButton = element(by.css('.btn-logout'));
+
+  this.doLogout = function() {
+    return this.logoutButton.click();
   }
 };
 

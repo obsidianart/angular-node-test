@@ -82,6 +82,15 @@ describe('Main View', function() {
         expect(browser.getCurrentUrl()).toContain('welcome')
       })
     });
+
+    it('should allow a user to logout and redirect to the homepage ', function() {
+      page.doLogin('user','password').then(function(){
+        expect(page.logoutButton.isDisplayed()).toBeTruthy();
+        page.doLogout().then(function(){
+          expect(browser.getCurrentUrl()).not.toBe('welcome')
+        })
+      })
+    });
   })
 
 });

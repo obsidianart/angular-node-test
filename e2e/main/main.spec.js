@@ -18,21 +18,35 @@ describe('Main View', function() {
 
   describe ('with login form',function(){
     it('should show an input field for the user name', function() {
-      var usernameField = page.loginForm.element(by.model('user.name'))
-      expect(usernameField.isDisplayed()).toBeTruthy();
+      expect(page.loginForm.username.isDisplayed()).toBeTruthy();
     });
 
     it('should show an input field for the password', function() {
-      var passwordField = page.loginForm.element(by.model('user.password'))
-      expect(passwordField.isDisplayed()).toBeTruthy();
+      expect(page.loginForm.password.isDisplayed()).toBeTruthy();
     });
 
     it('should display a login button', function() {
-      expect(page.loginButton.isDisplayed()).toBeTruthy();
+      expect(page.loginForm.button.isDisplayed()).toBeTruthy();
     });
 
-    it('should login the user when the button is pressed', function() {
-      page.loginButton.click().then(function(){
+    it('should not login when no user is inserted', function() {
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).not.toContain('welcome')
+      })
+    });
+
+    it('should not login an unknown user', function() {
+      page.loginForm.username.sendKeys("random");
+
+      page.loginForm.button.click().then(function(){
+        expect(browser.getCurrentUrl()).not.toContain('welcome')
+      })
+    });
+
+    it('should login the user "user"', function() {
+      page.loginForm.username.sendKeys("user");
+
+      page.loginForm.button.click().then(function(){
         expect(browser.getCurrentUrl()).toContain('welcome')
       })
     });

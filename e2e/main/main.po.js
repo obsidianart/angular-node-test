@@ -7,13 +7,16 @@
 
 var MainPage = function() {
   this.banner = element(by.css('#banner'));
-
   this.footer = element(by.css('footer.footer'));
-
   this.main = element(by.css('#main'));
 
-  this.loginForm = this.main.element(by.css('form'));
-  this.loginButton = this.loginForm.element(by.css('.btn-login'))
+  var loginForm = this.main.element(by.css('form'));
+
+  this.loginForm = {
+  	username: loginForm.element(by.model('user.name')),
+    password: loginForm.element(by.model('user.password')),
+  	button: loginForm.element(by.css('.btn-login'))
+  }
 };
 
 module.exports = new MainPage();

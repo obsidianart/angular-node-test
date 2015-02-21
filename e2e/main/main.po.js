@@ -17,6 +17,14 @@ var MainPage = function() {
     password: loginForm.element(by.model('user.password')),
   	button: loginForm.element(by.css('.btn-login'))
   }
+
+
+  this.doLogin = function(username, password) {
+    this.loginForm.username.sendKeys(username);
+    this.loginForm.password.sendKeys(password);
+
+    return this.loginForm.button.click();
+  }
 };
 
 module.exports = new MainPage();

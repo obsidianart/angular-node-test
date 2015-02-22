@@ -16,7 +16,9 @@
     $grunt
 
 ###NOTE
-  Users are created when the serve is started but not removed.
+  * Users are created when the server starts (every user present is removed, check with BA story U3 and U4).
+  * Logs should probably be a capped collection http://docs.mongodb.org/ecosystem/use-cases/storing-log-data/#rta-storing-log-data-capped-collections
+
 
 ###User stories
   * U1 - Create a page that show the project name and the author

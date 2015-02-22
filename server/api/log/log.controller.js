@@ -5,6 +5,16 @@ var config = require('../../config/environment');
 var NUMBER_OF_ENTRIES_TO_RETRIEVE = 50
 
 /**
+ * Get most recent access
+ */
+exports.recentList = function (req, res) {
+  Log.find().sort({ $natural: -1 }).limit(NUMBER_OF_ENTRIES_TO_RETRIEVE).exec(function (err, logs) {
+    if(err) { return res.send(500, err); }
+    return res.json(200, logs);
+  });
+};
+
+/**
  * New entry
  * @param {Object} {ip:String, success:Boolean, username: String}
  * @return promise
@@ -17,7 +27,7 @@ exports.create = function(data) {
   };
 
   return Log.create(logData, function(err, log) {
-    if(err) { console.log(err); return err; }
+    if(err) { console.log("Error logging user: ",err); return err; }
     return true;
   });
 };

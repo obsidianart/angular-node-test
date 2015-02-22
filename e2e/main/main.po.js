@@ -30,6 +30,8 @@ var MainPage = function() {
   this.doLogout = function() {
     return this.logoutButton.click();
   }
+
+  this.adminJsonLogFeed = element(by.css('a[href^="/api/log"]'));
 };
 
 module.exports = new MainPage();

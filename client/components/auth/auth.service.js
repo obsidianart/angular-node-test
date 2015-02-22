@@ -68,6 +68,15 @@ angular.module('skyServerApp')
       },
 
       /**
+       * Check if a user is an admin
+       *
+       * @return {Boolean}
+       */
+      isAdmin: function() {
+        return currentUser.name === 'admin';
+      },
+
+      /**
        * Waits for currentUser to resolve before checking if user is logged in
        */
       isLoggedInAsync: function(cb) {

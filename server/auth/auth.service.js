@@ -36,6 +36,23 @@ function isAuthenticated() {
 }
 
 /**
+ * Attaches the user object to the request if authenticated
+ * Otherwise returns 403
+ */
+function isAdmin() {
+  return compose()
+    .use(isAuthenticated())
+    .use(function meetsRequirements(req, res, next) {
+      if (req.user.name === 'admin') {
+        next();
+      }
+      else {
+        res.send(403);
+      }
+    });
+}
+
+/**
  * Returns a jwt token signed by the app secret
  */
 function signToken(id) {
@@ -53,5 +70,6 @@ function setTokenCookie(req, res) {
 }
 
 exports.isAuthenticated = isAuthenticated;
+exports.isAdmin = isAdmin;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;

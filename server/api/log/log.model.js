@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var LogSchema = new Schema({
   ip: String, //The ip can be save as number to save space
-  datetime: { type : Date, default: Date.now },
+  datetime: { type : Number, default: Date.now },
   action: { type: String, enum: ['AUTH_SUCCESS', 'AUTH_FAILURE'] },
   username: String
 });

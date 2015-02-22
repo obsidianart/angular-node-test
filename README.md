@@ -6,14 +6,19 @@
     $mongod -dbpath data/db
     $grunt serve
 
+###To run unit tests
+     $grunt test
+
 ###To run e2e tests:
      $grunt test:e2e
 
-###To run unit tests (server only, frontend has only e2e tests):
-     $grunt test:server
+###To build the project
+    $grunt
 
 ###NOTE
-  Users are created when the serve is started but not removed.
+  * Users are created when the server starts (every user present is removed, check with BA story U3 and U4).
+  * Logs should probably be a capped collection http://docs.mongodb.org/ecosystem/use-cases/storing-log-data/#rta-storing-log-data-capped-collections
+
 
 ###User stories
   * U1 - Create a page that show the project name and the author
@@ -31,6 +36,3 @@
     * Username
   * U10 - Create a json feed with the login attempt restricted to the admin user
   * U11 - Prevent non logged user to go to the welcome page
-  
-Known bug:
-  grunt build expect unit test in the client part and crash when trying to build.

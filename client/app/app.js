@@ -6,7 +6,7 @@ angular.module('skyServerApp', [
   'ngSanitize',
   'ui.router'
 ])
-  .config(function ($urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);

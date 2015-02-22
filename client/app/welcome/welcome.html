@@ -3,6 +3,10 @@
     <div class="col-sm-12">
       <h1 class="text-center">Welcome to the logged in area</h1>
     </div>
+    <div class="col-sm-12" ng-if="isAdmin()">
+      <h2>A the master you can access the log of normal humans</h2>
+      <a href="/api/log?access_token={{token}}">Log access feed</a>
+    </div>
     <div class="col-sm-12 text-center">
       <button class="btn btn-lg btn-logout" ng-click="logout()">Logout</button>
     </div>

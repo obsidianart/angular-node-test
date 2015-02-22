@@ -96,6 +96,13 @@ describe('Main View', function() {
       browser.get('/welcome');
       expect(browser.getCurrentUrl()).not.toContain('welcome')
     });
+
+
+    it('should show a link for the access log to the admin user', function() {
+      page.doLogin('admin','password').then(function(){
+        expect(page.adminJsonLogFeed.isDisplayed()).toBeTruthy();
+      })
+    });
   })
 
 });

@@ -15,7 +15,7 @@
 ### To build the project
     $grunt
 
-### To access the json feed
+### To access the json feed (or just log in as admin and click on it)
     /api/log?access_token={access token}
 
 ### NOTE
@@ -38,3 +38,4 @@
     * Username
   * U10 - Create a json feed with the login attempt restricted to the admin user
   * U11 - Prevent non logged user to go to the welcome page
+  * U12 - Add json feed link for the admin user on the welcome page
